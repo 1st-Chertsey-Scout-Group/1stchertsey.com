@@ -12,7 +12,7 @@ import { Container } from "@/components/ui/container";
 import {
   LinkList,
   LinkListFooter,
-  LinkListHeader,
+  LinkGroup,
   LinkItem,
 } from "@/components/ui/links";
 import {
@@ -76,14 +76,17 @@ const { data } = Astro.props;
 
     <Container className="p-0">
       <LinkList>
-        <LinkListHeader> Quick Links</LinkListHeader>
         {
-          data.links.map((link) => (
-            <LinkItem
-              href={link.url}
-              title={link.title}
-              description={link.description}
-            />
+          data.groups.map((group) => (
+            <LinkGroup name={group.name}>
+              {group.links.map((link) => (
+                <LinkItem
+                  href={link.url}
+                  title={link.title}
+                  description={link.description}
+                />
+              ))}
+            </LinkGroup>
           ))
         }
         <LinkListFooter>
