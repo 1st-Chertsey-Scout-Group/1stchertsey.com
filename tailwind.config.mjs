@@ -16,10 +16,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Nunito Sans', ...defaultTheme.fontFamily.sans],
+        sans: ["Nunito Sans", ...defaultTheme.fontFamily.sans],
       },
       objectPosition: {
-        'center-left': 'center left',
+        "center-left": "center left",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -78,4 +78,4 @@ export default {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

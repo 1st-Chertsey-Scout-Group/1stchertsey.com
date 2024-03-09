@@ -1,18 +1,103 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection } from "astro:content";
 import BaseLayout from "../layouts/base.layout.astro";
 
-export async function getStaticPaths() {
-	const sectionsCollection = await getCollection('sections');
-	return sectionsCollection.map((sections) => ({
-		params: { slug: sections.slug },
-		props: sections,
-	}));
-}
-type Props = CollectionEntry<'sections'>;
+import {
+  Hero,
+  HeroDescription,
+  HeroMeeting,
+  HeroTitle,
+} from "@/components/ui/hero";
+import { Container } from "@/components/ui/container";
+import { Qr } from "@/components/ui/qr";
+import {
+  LinkList,
+  LinkListFooter,
+  LinkListHeader,
+  LinkItem,
+} from "@/components/ui/links";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
-const section = Astro.props;
+import { Separator } from "@/components/ui/separator";
+
+import { SITE_URL } from "@/lib/consts";
+
+export async function getStaticPaths() {
+  const sectionsCollection = await getCollection("sections");
+  return sectionsCollection.map((sections) => ({
+    params: { slug: sections.slug },
+    props: sections,
+  }));
+}
+type Props = CollectionEntry<"sections">;
+
+const { data, slug } = Astro.props;
 ---
 
-<BaseLayout title={section.data.title}>
+<BaseLayout title={data.title}>
+  <div class="text-center">
+    <div class="bg-zinc-100">
+      <Container>
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="https://1stchertseyscoutgroup.com">
+                Home
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{data.title}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </Container>
+    </div>
+
+    <Hero>
+      <Container className="py-8 flex flex-col gap-3">
+        <HeroTitle>
+          {data.title}
+        </HeroTitle>
+        <HeroDescription>
+          <div>
+            {data.description}
+          </div>
+        </HeroDescription>
+        <HeroMeeting
+          day={data.meeting.day}
+          start={data.meeting.start}
+          end={data.meeting.end}
+        />
+      </Container>
+    </Hero>
+
+    <Container className="p-0">
+      <LinkList>
+        <LinkListHeader> Quick Links</LinkListHeader>
+        {
+          data.links.map((link, index) => (
+            <LinkItem
+              href={link.url}
+              title={link.title}
+              description={link.description}
+            />
+          ))
+        }
+        <LinkListFooter>
+          <a
+            class="text-zinc-600 text-sm pt-2"
+            href="https://1stchertseyscoutgroup.com">1st Chertsey Scout Group</a
+          >
+        </LinkListFooter>
+      </LinkList>
+    </Container>
+  </div>
 </BaseLayout>
