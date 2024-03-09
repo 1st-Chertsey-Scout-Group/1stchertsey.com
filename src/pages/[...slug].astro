@@ -9,7 +9,6 @@ import {
   HeroTitle,
 } from "@/components/ui/hero";
 import { Container } from "@/components/ui/container";
-import { Qr } from "@/components/ui/qr";
 import {
   LinkList,
   LinkListFooter,
@@ -25,10 +24,6 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-import { Separator } from "@/components/ui/separator";
-
-import { SITE_URL } from "@/lib/consts";
-
 export async function getStaticPaths() {
   const sectionsCollection = await getCollection("sections");
   return sectionsCollection.map((sections) => ({
@@ -38,7 +33,7 @@ export async function getStaticPaths() {
 }
 type Props = CollectionEntry<"sections">;
 
-const { data, slug } = Astro.props;
+const { data } = Astro.props;
 ---
 
 <BaseLayout title={data.title}>
@@ -83,7 +78,7 @@ const { data, slug } = Astro.props;
       <LinkList>
         <LinkListHeader> Quick Links</LinkListHeader>
         {
-          data.links.map((link, index) => (
+          data.links.map((link) => (
             <LinkItem
               href={link.url}
               title={link.title}
