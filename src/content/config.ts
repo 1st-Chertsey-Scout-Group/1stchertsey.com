@@ -10,11 +10,16 @@ const sectionsCollection = defineCollection({
       start: z.string(),
       end: z.string(),
     }),
-    links: z.array(
+    groups: z.array(
       z.object({
-        url: z.string().url(),
-        title: z.string(),
-        description: z.string(),
+        name: z.string(),
+        links: z.array(
+          z.object({
+            url: z.string().url(),
+            title: z.string(),
+            description: z.string(),
+          }),
+        ),
       }),
     ),
   }),

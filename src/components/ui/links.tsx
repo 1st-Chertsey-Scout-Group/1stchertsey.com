@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 const LinkList = React.forwardRef<HTMLDivElement>(({ ...props }, ref) => (
   <div
-    className="flex flex-col gap-4"
+    className="flex flex-col gap-8 py-8"
     ref={ref}
     aria-label="links"
     {...props}
@@ -11,10 +11,20 @@ const LinkList = React.forwardRef<HTMLDivElement>(({ ...props }, ref) => (
 ));
 LinkList.displayName = "LinkList";
 
-const LinkListHeader = React.forwardRef<HTMLDivElement>(({ ...props }, ref) => (
-  <div className="pt-4 text-2xl font-bold" ref={ref} {...props} />
-));
-LinkListHeader.displayName = "LinkListHeader";
+export interface LinkGroupProps
+  extends React.InputHTMLAttributes<HTMLDivElement> {
+  name: string;
+}
+
+const LinkGroup = React.forwardRef<HTMLDivElement, LinkGroupProps>(
+  ({ children, name, ...props }, ref) => (
+    <div className="flex flex-col gap-4" ref={ref} {...props}>
+      <div className="pb-2 text-2xl font-bold">{name}</div>
+      {children}
+    </div>
+  ),
+);
+LinkGroup.displayName = "LinkGroup";
 
 const LinkListFooter = React.forwardRef<HTMLDivElement>(({ ...props }, ref) => (
   <div className="" ref={ref} {...props} />
@@ -51,4 +61,4 @@ const LinkItem = React.forwardRef<
 });
 LinkItem.displayName = "LinkItem";
 
-export { LinkList, LinkListHeader, LinkListFooter, LinkItem };
+export { LinkList, LinkGroup, LinkListFooter, LinkItem };
