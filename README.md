@@ -1,6 +1,6 @@
-# 1st Chertsey Scout Group
+# 1st Chertsey
 
-[The website of 1st Chertsey Scout Group](https://1stchertseyscoutgroup.com)
+[A 'Link Tree' inspired website for 1st Chertsey Scout Group ](https://1stchertsey.com)
 
 ## 🧞 Commands
 
