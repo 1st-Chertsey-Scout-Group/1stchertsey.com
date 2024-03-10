@@ -4,8 +4,8 @@ title: Intrepid Explorers
 description: Teamwork, leadership, endless possibilities - unlock your potential with Explorer Scouts!
 meeting:
   day: Tuesday
-  start: "20:00"
-  end: "22:00"
+  start: " 20:00"
+  end: " 22:00"
 groups:
   - name: Quick Links
     links:

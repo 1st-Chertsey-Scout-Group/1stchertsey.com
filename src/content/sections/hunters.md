@@ -4,8 +4,8 @@ title: Hunters Cubs
 description: Make knots, make memories! Unforgettable adventures build awesome skills in Cub Scouts.
 meeting:
   day: Monday
-  start: "19:00"
-  end: "20:30"
+  start: " 19:00"
+  end: " 20:30"
 groups:
   - name: Quick Links
     links:
