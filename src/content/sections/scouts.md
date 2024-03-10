@@ -17,7 +17,7 @@ groups:
         description: 28th to 30th June. An activity camp for all scouts and guides in Surrey, only run once every 3 years.
       - url: mailto:chertseyscouts@gmail.com?subject=Summer+Camp
         title: Summer Camp
-        description: 27rd July to 3rd August, a week camp at Thriftwood.
+        description: 27th July to 3rd August, a week camp at Thriftwood.
   - name: Quick Links
     links:
       - url: https://1stchertseyscoutgroup.com/scouts-programme
