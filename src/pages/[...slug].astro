@@ -23,6 +23,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const sectionsCollection = await getCollection("sections");
@@ -74,7 +75,7 @@ const { data } = Astro.props;
       </Container>
     </Hero>
 
-    <Container className="p-0">
+    <Container>
       <LinkList>
         {
           data.groups.map((group) => (
@@ -84,7 +85,9 @@ const { data } = Astro.props;
                   href={link.url}
                   title={link.title}
                   description={link.description}
-                />
+                >
+                  {link.image && <Image src={link.image} alt="aaa" />}
+                </LinkItem>
               ))}
             </LinkGroup>
           ))

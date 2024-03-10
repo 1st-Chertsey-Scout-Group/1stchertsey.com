@@ -4,8 +4,8 @@ title: Dons Cubs
 description: Campfires & compass skills! Build confidence and practical knowledge in Cub Scouts.
 meeting:
   day: Wednesday
-  start: "19:00"
-  end: "20:30"
+  start: " 19:00"
+  end: " 20:30"
 groups:
   - name: Quick Links
     links:

@@ -4,8 +4,8 @@ title: Squirrels
 description: Be quick, be clever, be a Squirrel Scout! Learn cool skills, discover nature's secrets, and have a blast!
 meeting:
   day: Wednesday
-  start: "17:00"
-  end: "18:00"
+  start: " 17:00"
+  end: " 18:00"
 groups:
   - name: Quick Links
     links:

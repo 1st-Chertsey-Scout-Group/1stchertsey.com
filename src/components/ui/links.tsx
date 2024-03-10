@@ -40,22 +40,22 @@ export interface LinkItemProps
 const LinkItem = React.forwardRef<
   HTMLAnchorElement,
   React.ComponentPropsWithoutRef<"a"> & LinkItemProps
->(({ className, title, description, ...props }, ref) => {
+>(({ children, className, title, description, ...props }, ref) => {
   return (
     <a
-      className={cn(
-        "flex flex-col bg-zinc-100 p-4 hover:bg-zinc-200",
-        className,
-      )}
+      className={cn("flex flex-col bg-zinc-100 hover:bg-zinc-200", className)}
       ref={ref}
       {...props}
     >
-      <div className="pb-2">
-        <p className="text-lg font-bold leading-5">{title}</p>
+      {children && <div>{children}</div>}
+      <div className="flex flex-col p-4">
+        <div className="pb-2">
+          <p className="text-lg font-bold leading-5">{title}</p>
+        </div>
+        <span className="">
+          <p>{description}</p>
+        </span>
       </div>
-      <span>
-        <p>{description}</p>
-      </span>
     </a>
   );
 });
