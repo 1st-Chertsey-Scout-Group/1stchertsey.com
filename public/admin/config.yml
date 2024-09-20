@@ -5,16 +5,19 @@ backend:
 
 media_folder: ""
 public_folder: ""
+publish_mode: editorial_workflow
 
 collections:
   - name: "redirects" # Used in routes, e.g., /admin/collections/blog
     label: "Redirects" # Used in the UI
     folder: "src/content/redirects" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
+    extension: json
+    format: json
+    slug: "{{from}}"
+    summary: "{{from}}"
     fields: # The fields for each document, usually in frontmatter
-      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "From", name: "from", widget: "string" }
+      - { label: "To", name: "to", widget: "string" }
+      - { label: "Status", name: "status", widget: "number", default: "301" }
+      - { label: "Force", name: "force", widget: "boolean", default: "false" }
