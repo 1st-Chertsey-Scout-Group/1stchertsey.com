@@ -1,11 +1,10 @@
 backend:
   name: github
   repo: 1st-Chertsey-Scout-Group/1stchertsey.com
-  branch: configurable-redirects
+  branch: main
 
 media_folder: ""
 public_folder: ""
-publish_mode: editorial_workflow
 
 collections:
   - name: "redirects" # Used in routes, e.g., /admin/collections/blog
