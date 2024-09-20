@@ -1,0 +1,19 @@
+# Configure Netlify builds.
+[build]
+  publish = "site"
+  command = ""
+
+[[redirects]]
+from = "/"
+to = "https://1stchertseyscoutgroup.com/"
+force = true
+
+[[redirects]]
+from = "/fireworks"
+to = "https://1stchertseyscoutgroup.com/news/2024/november/fireworks/"
+force = true
+
+[[redirects]]
+from = "/tickets"
+to = "https://www.ticketsource.co.uk/1st-chertsey-scout-group/chertsey-community-fireworks-9th-november-2024/e-gxzxkr"
+force = true
