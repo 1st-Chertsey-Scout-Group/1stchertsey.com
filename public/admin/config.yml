@@ -18,5 +18,5 @@ collections:
     fields: # The fields for each document, usually in frontmatter
       - { label: "From", name: "from", widget: "string" }
       - { label: "To", name: "to", widget: "string" }
-      - { label: "Status", name: "status", widget: "number", default: "301" }
-      - { label: "Force", name: "force", widget: "boolean", default: "false" }
+      - { label: "Status", name: "status", widget: "number", default: 200 }
+      - { label: "Force", name: "force", widget: "boolean", default: false }

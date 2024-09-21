@@ -1,6 +1,6 @@
 {
-  "status": 200,
-  "force": "false",
+  "status": 301,
+  "force": true,
   "from": "/scouts",
   "to": "https://1stchertseyscoutgroup.com/scouts/"
 }
